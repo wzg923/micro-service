@@ -1,0 +1,36 @@
+############################################################################
+######################         eureka 注册中心                         #######################
+############################################################################
+
+spring:
+  application:
+    name: EurekaServer
+
+server:
+  port: 8112
+#  port: ${PORT:${SERVER_PORT:0}}
+
+security:
+  basic:
+    enabled: true # 启用认证
+  user:
+    name: root
+    password: 123456
+    
+
+eureka:  
+  instance: 
+    hostname: localhost
+    statusPageUrlPath: ${eureka.instance.hostName}/info
+    healthCheckUrlPath: ${eureka.instance.hostName}/health
+    homePageUrl: ${eureka.instance.hostName}/
+  client: 
+    registerWithEureka: false 
+    fetchRegistry: false 
+    healthcheck:
+      enabled: true
+    serviceUrl: 
+      defaultZone: http://root:123456@localhost:8111/eureka/
+
+
+    

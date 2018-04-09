@@ -1,0 +1,12 @@
+server:
+  port: 8095
+
+
+spring:
+  application:
+    name: zuul-proxy-client
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

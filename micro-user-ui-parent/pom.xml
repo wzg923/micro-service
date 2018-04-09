@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>micro-services-parent</artifactId>
+        <groupId>com.guoyicap.micro</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>micro-user-ui-parent</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>micro-user-ui-ribbon</module>
+        <module>micro-user-ui-feign</module>
+        <module>micro-user-ui-dubbo</module>
+        <module>micro-user-ui-dubbo-proxy</module>
+        <module>micro-user-ui-zuul-proxy</module>
+    </modules>
+
+
+</project>

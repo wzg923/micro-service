@@ -1,0 +1,21 @@
+server:
+  port: 8092
+
+
+spring:
+  application:
+    name: dubbo-client
+  dubbo:
+    application:
+      name : ${spring.application.name}
+    registry:
+      protocol : zookeeper
+      address : localhost:2181
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

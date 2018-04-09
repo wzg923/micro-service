@@ -1,0 +1,248 @@
+/**
+*Added by liuxiaoxiao 20160817
+*/
+/*oAuth认证样式*/
+body,
+html {
+  font-family: "Microsoft YaHei", "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  min-height: 100%;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clearfix:after {
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.font-blue {
+  color: #0099e5;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ul {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+a:visited,
+a:active {
+  text-decoration: none;
+}
+.button-oauth {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+  height: 45px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: normal;
+  cursor: pointer;
+  color: #fff;
+  background-color: #0ca292;
+  border: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  -moz-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
+}
+.oauth-region {
+  margin: 0 auto;
+  width: 640px;
+  padding: 40px 30px;
+}
+.oauth-region .oauth-head-region {
+  width: 100%;
+  padding-bottom: 25px;
+  height: 62px;
+  border-bottom: 1px solid #dadada;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.oauth-region .oauth-head-region .community-logo {
+  display: inline-block;
+  background-image: url("../images/shijue_me_02.svg");
+  background-size: 100%;
+  width: 149px;
+  height: 39px;
+  background-repeat: no-repeat;
+}
+.oauth-region .oauth-head-region .head-region-title {
+  position: relative;
+  bottom: 5px;
+  left: 15px;
+  font-size: 18px;
+  color: #3f3637;
+}
+.oauth-region .oauth-tip-region {
+  height: 50px;
+  line-height: 50px;
+  text-align: right;
+  font-size: 14px;
+  color: #3f3637;
+}
+.oauth-region .oauth-tip-region .tip-region-com {
+  color: #0099e5;
+}
+.oauth-region .oauth-login-region .login-form {
+  width: 100%;
+  background-color: #f7f7f7;
+  padding-top: 45px;
+  padding-bottom: 70px;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email {
+  margin: 0 auto;
+  width: 358px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email li {
+  list-style: none;
+  margin-top: 15px;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email li input {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  outline-style: none;
+  outline-width: 0px;
+  font-size: 14px;
+  padding: 8px 10px;
+  color: #525558;
+  border: 1px solid #b9c1c7;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  -moz-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
+  resize: none;
+  line-height: 14px;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email li input.email,
+.oauth-region .oauth-login-region .login-form .show_on_email li input.password {
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  width: 100%;
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #b9c1c7;
+  font-size: 16px;
+  padding-left: 15px;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email li input.email:focus,
+.oauth-region .oauth-login-region .login-form .show_on_email li input.password:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.oauth-region .oauth-login-region .login-form .show_on_email li .button.large {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+  height: 45px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: normal;
+  cursor: pointer;
+  color: #fff;
+  background-color: #0ca292;
+  border: none;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email .login-form-footer {
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+}
+.oauth-region .oauth-login-region .login-form .show_on_email .login-form-footer .register-link {
+  margin-left: 5px;
+}
+.oauth-region .oauth-login-region .login-form .logged-region {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.oauth-region .oauth-login-region .login-form .logged-region .logged-user-info {
+  width: 355px;
+  margin: 0 auto;
+}
+.oauth-region .oauth-login-region .login-form .logged-region .logged-user-info .face {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 120px;
+  position: relative;
+  text-align: center;
+}
+.oauth-region .oauth-login-region .login-form .logged-region .logged-user-info .face .user-img-container {
+  margin: 0 auto;
+  width: 84px;
+  height: 84px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.oauth-region .oauth-login-region .login-form .logged-region .logged-user-info .face .user-img-container img {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.oauth-region .oauth-login-region .login-form .logged-region .logged-user-info .face .nick-name {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  line-height: 18px;
+  font-size: 14px;
+  overflow: hidden;
+  text-align: center;
+  color: #5d5d5d;
+}
+.oauth-region .oauth-login-region .login-form .logged-region .logged-user-info .switch-account {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 12px;
+  height: 20px;
+  line-height: 18px;
+}
+@media only screen and (max-width: 800px) {
+  .oauth-region {
+    width: 100%;
+    padding: 60px 15px;
+  }
+  .oauth-region .oauth-login-region .login-form {
+    background-color: #fff;
+  }
+  .oauth-region .oauth-login-region .login-form .logged-region .logged-user-info {
+    width: 100%;
+  }
+}

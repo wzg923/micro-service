@@ -1,0 +1,23 @@
+info:
+  component: Hystrix Dashboard
+  
+server:
+  port: 7979
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: Hystrix-Dashboard
+turbine:
+  app-config:
+    -feign-client
+
+  cluster-name-expression:  metadata['cluster']
+

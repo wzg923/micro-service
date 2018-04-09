@@ -1,0 +1,133 @@
+server:
+  # 端口
+  port: 8079
+
+
+
+#eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+spring:
+  profiles:
+    active: #spring.profiles.active#
+    #maven的构建的时候会替换spring.profiles.active
+  application:
+    name: micro-user
+       
+
+  #datasource
+  datasource:
+    name: masterDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/demo?useSSL=true
+    username: demo
+    password: 123456
+        # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 连接池最大使用连接数
+      max-active: 20
+      # 初始化连接大小
+      initial-size: 1
+      # 获取连接最大等待时间
+      max-wait: 60000
+      # 连接池最小空闲
+      min-idle: 3
+      # 自动清除无用连接
+      remove-abandoned: true
+      # 清除无用连接的等待时间
+      remove-abandoned-timeout: 180
+      # 连接属性
+      connection-properties: clientEncoding=UTF-8
+      
+  #redis
+  redis:
+      host: localhost
+  zipkin:
+    base-url: http://localhost:9411/
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath*:/mapper/**/**.xml
+  type-aliases-package: com.vcg.micro.user.dao.model
+  configuration:
+    mapUnderscoreToCamelCase: true
+    database-id: service-user
+    # 开启字段名和属性名驼峰匹配
+    map-underscore-to-camel-case: true
+    # 全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载
+    lazy-loading-enabled: true
+    # 当启用时，有延迟加载属性的对象在被调用时将会完全加载任意属性。否则，每种属性将会按需要加载
+    aggressive-lazy-loading: true
+    
+#mapper  
+mapper:
+  mappers: com.vcg.micro.common.base.MyMapper
+  not-empty: true
+  identity: MYSQL
+
+# 日志
+logging:
+  file: micro-user.log
+  level:
+    tk.mybatis: INFO
+    com.framework: TRACE
+    com.vcg.micro.config.user.dao: INFO
+
+# 分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+
+
+# Base packages to scan Dubbo Components (e.g @Service , @Reference)
+dubbo:
+  scan:
+    basePackages: com.vcg.micro.config.user.service.impl
+# Dubbo Config properties
+## ApplicationConfig Bean
+  application:
+    id: dubbo-provider-user
+    name: dubbo-provider-user
+    qos:
+      port: 22222
+      enable: true
+
+## ProtocolConfig Bean
+  protocol:
+    id: rmi
+    name: rmi
+    port: 2999
+    status: server
+    #id: dubbo
+    #name: dubbo
+    #port: 20881
+
+## RegistryConfig Bean
+  registry:
+    id: zookeeper
+    address: zookeeper://127.0.0.1:2181
+
+# Dubbo Endpoint (default status is disable)
+endpoints:
+  dubbo:
+    enabled: true
+
+# Dubbo Health
+## StatusChecker Name defaults (default : "memory", "load" )
+management:
+  port: 9091
+  health:
+    dubbo:
+      status:
+        defaults: memory
+## StatusChecker Name extras (default : empty )
+        extras: load,threadpool

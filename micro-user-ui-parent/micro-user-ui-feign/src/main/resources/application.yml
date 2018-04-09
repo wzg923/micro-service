@@ -1,0 +1,29 @@
+server:
+  port: 8093
+
+
+
+spring:
+  application:
+    name: feign-client
+  zipkin:
+    base-url: http://localhost:9411/
+  redis:
+    host: localhost
+    port: 6379
+    pool:
+      max-active: 1000
+
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+
+  client:
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+feign:
+  hystrix:
+    enabled: true      

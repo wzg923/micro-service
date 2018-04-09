@@ -1,0 +1,35 @@
+server:
+  port: 8082
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:9999/me
+    client:
+      access-token-uri: http://localhost:9999/oauth/token
+      user-authorization-uri: http://localhost:9999/oauth/authorize
+
+      client-id: acme
+      client-secret: acmesecret
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+zuul:
+  host:
+    max-per-route-connections: 200
+    max-total-connections: 200
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:8081/resource
+
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  application:
+    name: oauth-ui
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

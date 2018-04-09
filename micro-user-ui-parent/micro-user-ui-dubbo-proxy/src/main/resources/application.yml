@@ -1,0 +1,16 @@
+server:
+  port: 8094
+
+
+
+spring:
+  application:
+    name: dubbo-rpc-proxy-client
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
