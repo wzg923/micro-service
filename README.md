@@ -5,14 +5,14 @@
 Spring Cloud 快速搭建微服务
 
 <br>
-spring cloud 为开发人员提供了快速构建分布式系统的一些工具，包括配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等等，下面进行个服务分部搭建源码与测试案例，此项目初于学习迭代商有待深入了解！
+spring cloud 为开发人员提供了快速构建分布式系统的一些工具，本框架包括配置管理、服务发现、断路器、路由、微代理、分布式会话、OAuth2服务、服务链路追踪、RestAPI等等，下面进行个服务分部搭建源码与测试案例，此项目初于学习迭代商有待深入了解！
 
 <br>
 
 ---
 ##目标微服务系统
 
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0831/101823_6a084f42_1468963.png "lct.png")
+![SpringCloud组件](https://raw.githubusercontent.com/wzg923/micro-service/master/doc/image/springcloud-1.png "springcloud-1.png")
 
 
 
