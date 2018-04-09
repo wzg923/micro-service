@@ -12,7 +12,7 @@ spring cloud 为开发人员提供了快速构建分布式系统的一些工具�
 ---
 ##目标微服务系统
 
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0831/101823_6a084f42_1468963.png "lct.png")
+![SpringCloud组件](https://raw.githubusercontent.com/wzg923/micro-service/master/doc/image/springcloud-1.png "springcloud-1.png")
 
 
 
