@@ -1,5 +1,7 @@
 package com.guoyicap.micro.common;
 
+import java.util.UUID;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,8 +15,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @MapperScan(basePackages={"com.framework.common.base"})
 public class CommonApplication extends WebMvcConfigurerAdapter  {
 	
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
     	SpringApplication.run(CommonApplication.class, args);
-    }
+    }*/
 
 }	

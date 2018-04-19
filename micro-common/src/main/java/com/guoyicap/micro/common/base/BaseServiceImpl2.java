@@ -20,7 +20,7 @@ import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
 
-public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
+public abstract class BaseServiceImpl2<T extends IdEntity> implements BaseService2<T> {
 
 	// protected Mapper<T> mapper;
 
@@ -28,7 +28,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 
 	protected Validator validator;
 
-	public BaseServiceImpl() {
+	public BaseServiceImpl2() {
 	}
 
 	/*

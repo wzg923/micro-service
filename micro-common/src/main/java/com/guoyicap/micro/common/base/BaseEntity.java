@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Transient;
 /**
  * 实体基类
@@ -20,7 +21,9 @@ public class BaseEntity /* extends JSONObject*/ implements Serializable {
 	
 	@Id
     @Column(name = "Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)// MYSQL时可以这样使用自增	
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TestSequence")//Oracle
+    //@SequenceGenerator(name = "TestSequence", sequenceName = "SEQ_Test", allocationSize=1)//Oracle
     private Integer id;
 
     @Transient

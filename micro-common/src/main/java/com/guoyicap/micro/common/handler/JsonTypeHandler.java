@@ -32,7 +32,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
  * @author yunjie.du
  * @date 2016/5/31 19:33
  */
-public class JsonTypeHandler<T extends Object> extends BaseTypeHandler<T> {
+public class JsonTypeHandler <T extends Object> extends BaseTypeHandler<T> {
     private static final ObjectMapper mapper = new ObjectMapper();
     private Class<T> clazz;
  
