@@ -31,7 +31,14 @@ public interface UserService {
     @GetMapping(value="/user/{id}")
     User selectByPrimaryKey(
             @ApiParam(name = "id", value = "用户id", required = true, example = "http://localhost/user/1")
-            @PathVariable("id") Integer id);
+            @PathVariable("id") String id);
+    
+    @ApiOperation(value = "根据用户名username获取对象!",notes = "这个方法的主要作用是通过用户名获取对象,例子; http://localhost:8080/user/username/demo",httpMethod = "GET", response = User.class)
+    //@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    @GetMapping(value="/user/username/{username}")
+    User selectByUsername(
+            @ApiParam(name = "username", value = "用户名", required = true, example = "http://localhost/user/username/demo")
+            @PathVariable("username") String username);
 
     @ApiOperation(value = "获取所有User对象", httpMethod = "GET", response = List.class)
     //@RequestMapping(value = "/user/list", method = RequestMethod.GET)

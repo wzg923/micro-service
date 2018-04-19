@@ -1,6 +1,7 @@
 package com.guoyicap.micro.config.user.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import com.guoyicap.micro.common.base.BaseModel;
 
@@ -20,6 +21,8 @@ public class User extends BaseModel implements Serializable {
     private String username;
 
     private String password;
+    
+    private Set<Role> roles;
 
     public Integer getId() {
         return id;
@@ -47,4 +50,12 @@ public class User extends BaseModel implements Serializable {
         this.password = password == null ? null : password.trim();
 		return this;
     }
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 }
