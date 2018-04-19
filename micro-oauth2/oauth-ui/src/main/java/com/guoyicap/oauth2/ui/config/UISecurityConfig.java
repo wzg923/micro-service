@@ -16,12 +16,30 @@ public class UISecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        /*http.authorizeRequests()
                 .antMatchers("/","/login")
-                //antMatcher("/**")// 所有请求都得经过认证和授权
+                //.antMatchers("/**")// 所有请求都得经过认证和授权
                 .permitAll()
                 .anyRequest()
-                .authenticated();
+                .authenticated();*/
+        
+        http.formLogin()
+        .loginPage("/login")
+        .permitAll()
+        .and()
+        .logout()
+        .permitAll()
+        .and()
+        .authorizeRequests()
+        .antMatchers("/admin/**")
+        .hasRole("ADMIN")
+        .and()
+        .csrf()
+        .disable();
+        //http.httpBasic();
+        
+    	
+    	http.csrf().disable();
     }
 
 }

@@ -1,27 +1,38 @@
 server:
   port: 8082
+  
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:9999/me
+      user-info-uri: http://localhost:8082/me
     client:
-      access-token-uri: http://localhost:9999/oauth/token
-      user-authorization-uri: http://localhost:9999/oauth/authorize
+      access-token-uri: http://localhost:8082/oauth2/oauth/token
+      user-authorization-uri: http://localhost:8082/uaa/oauth/authorize
 
-      client-id: acme
-      client-secret: acmesecret
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
+      client-id: webapp
+      #client-id:acme
+      #client-secret: acmesecret
+      
 zuul:
   host:
     max-per-route-connections: 200
     max-total-connections: 200
-  routes:
+  add-proxy-headers: true  
+  routes:  
+    oauth2: 
+      path: /oauth2/**
+      sensitiveHeaders:
+      serviceId: oauth2-server
     resource:
       path: /resource/**
       url: http://localhost:8081/resource
+      
+            
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+
 
 spring:
   zipkin:
