@@ -10,22 +10,44 @@ logging:
     org.springframework.web: debug
 
 spring:
+  application:
+    name: oauth2-server
   datasource:
-    url: jdbc:mysql://localhost/oauth
-    username: root
-    password: root
-    tomcat:
-      max-active: 200
+    name: oauthServerDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.61.23:3306/riskcontrol?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: rcuser
+    password: 123456    
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 连接池最大使用连接数
+      max-active: 20
+      # 初始化连接大小
+      initial-size: 1
+      # 获取连接最大等待时间
+      max-wait: 60000
+      # 连接池最小空闲
+      min-idle: 3
+      # 自动清除无用连接
+      remove-abandoned: true
+      # 清除无用连接的等待时间
+      remove-abandoned-timeout: 180
+      # 连接属性
+      connection-properties: clientEncoding=UTF-8
+    #tomcat:
+      #max-active: 200
+      
+      
   aop:
     proxy-target-class: true
   redis:
-    host: localhost
+    host: 192.168.29.52
     pool:
       max-active: 200
   zipkin:
     base-url: http://localhost:9411/
-  application:
-    name: oauth2-server
+
 management:
   context-path: /admin
 eureka:
@@ -34,3 +56,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 
+
+#mapper  
+mapper: 
+  mappers: com.guoyicap.micro.common.base.MyMapper
+  #mappers: com.vcg.micro.common.base.MyMapper
+  not-empty: true
+  identity: MYSQL
+  style: camelhumpAndUppercase

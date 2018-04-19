@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
-import com.guoyicap.oauth2.service.User;
+import com.guoyicap.oauth2.model.User;
 
 /**
  * Created by wuyu on 2016/8/29.
@@ -42,6 +42,9 @@ public class UserController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+    
+    
+    
 
     @RequestMapping(value = "/user")
     @ResponseBody

@@ -119,3 +119,29 @@ CREATE TABLE `users` (
   PRIMARY KEY (`username`)
 );*/
 
+
+
+-- ----------------------------
+-- Table structure for sys_authority
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_authority`;
+CREATE TABLE `sys_authority` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL COMMENT '权限名称',
+  `value` varchar(255) DEFAULT NULL COMMENT '权限值',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='权限表';
+
+
+-- ----------------------------
+-- Table structure for t_s_role_authority
+-- ----------------------------
+CREATE TABLE `t_s_role_authority` (
+`id`  int NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+`role_id`  varchar(255) NULL COMMENT '角色id' ,
+`authority_id`  varchar(255) NULL COMMENT '权限id' ,
+PRIMARY KEY (`id`)
+)
+COMMENT='角色权限关系表'
+;
+
