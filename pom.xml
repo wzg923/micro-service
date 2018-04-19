@@ -68,7 +68,7 @@
         <maven-surefire-plugin_version>2.17</maven-surefire-plugin_version>
     </properties>
 
-	<repositories>
+	<!-- <repositories>
 	    <repository>
 	        <id>sonatype-nexus-snapshots</id>
 	        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -79,7 +79,7 @@
 	            <enabled>true</enabled>
 	        </snapshots>
 	    </repository>
-	</repositories>
+	</repositories> -->
 
     <build>
         <plugins>
