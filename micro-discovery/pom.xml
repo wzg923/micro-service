@@ -10,7 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>micro-discovery</artifactId>
-
+    <properties>
+    	<start-class>com.guoyicap.micro.config.discovery.DiscoveryApplication</start-class>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -28,5 +30,34 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
+    
+    
+    <build>
+    	<plugins>
+    		<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                    <!-- <fork>true</fork>
+                    <skip>true</skip> -->
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.6.RELEASE</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+			        <execution>
+			            <goals>
+			                <goal>repackage</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+            </plugin>
+    	</plugins>
+    </build>
 
 </project>
