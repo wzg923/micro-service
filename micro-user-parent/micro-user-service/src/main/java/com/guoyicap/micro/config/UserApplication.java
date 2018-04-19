@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@MapperScan(basePackages= {"com.guoyicap.micro.config.user.dao"})
+@MapperScan(basePackages= {"com.guoyicap.micro.config.user.dao","com.framework.common.base"})
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
 @EnableDiscoveryClient

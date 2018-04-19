@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 import com.guoyicap.micro.common.base.BaseEntity;
 
-@Table(name = "`sys_admin_user`")
+@Table(name = "`t_s_base_user`")
 public class SysAdminUser  extends BaseEntity {
 	private static final long serialVersionUID = -6695722256864729383L;
 
@@ -24,11 +24,11 @@ public class SysAdminUser  extends BaseEntity {
     /**
      * 用户备注
      */
-    @Column(name = "`remark`")
-    private String remark;
+   // @Column(name = "`remark`")
+   // private String remark;
 
-    @Column(name = "`create_time`")
-    private Integer createTime;
+    //@Column(name = "`create_time`")
+   // private Integer createTime;
 
     /**
      * 真实姓名
@@ -39,20 +39,20 @@ public class SysAdminUser  extends BaseEntity {
     /**
      * 部门
      */
-    @Column(name = "`structure_id`")
-    private Integer structureId;
+   // @Column(name = "`structure_id`")
+    //private Integer structureId;
 
     /**
      * 岗位
      */
-    @Column(name = "`post_id`")
-    private Integer postId;
+    //@Column(name = "`post_id`")
+   // private Integer postId;
 
     /**
      * 状态,1启用0禁用
      */
-    @Column(name = "`status`")
-    private Byte status;
+    //@Column(name = "`status`")
+   // private Byte status;
 
 
     /**
@@ -91,37 +91,9 @@ public class SysAdminUser  extends BaseEntity {
         this.password = password;
     }
 
-    /**
-     * 获取用户备注
-     *
-     * @return remark - 用户备注
-     */
-    public String getRemark() {
-        return remark;
-    }
+   
+   
 
-    /**
-     * 设置用户备注
-     *
-     * @param remark 用户备注
-     */
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    /**
-     * @return create_time
-     */
-    public Integer getCreateTime() {
-        return createTime;
-    }
-
-    /**
-     * @param createTime
-     */
-    public void setCreateTime(Integer createTime) {
-        this.createTime = createTime;
-    }
 
     /**
      * 获取真实姓名
@@ -141,57 +113,5 @@ public class SysAdminUser  extends BaseEntity {
         this.realname = realname;
     }
 
-    /**
-     * 获取部门
-     *
-     * @return structure_id - 部门
-     */
-    public Integer getStructureId() {
-        return structureId;
-    }
-
-    /**
-     * 设置部门
-     *
-     * @param structureId 部门
-     */
-    public void setStructureId(Integer structureId) {
-        this.structureId = structureId;
-    }
-
-    /**
-     * 获取岗位
-     *
-     * @return post_id - 岗位
-     */
-    public Integer getPostId() {
-        return postId;
-    }
-
-    /**
-     * 设置岗位
-     *
-     * @param postId 岗位
-     */
-    public void setPostId(Integer postId) {
-        this.postId = postId;
-    }
-
-    /**
-     * 获取状态,1启用0禁用
-     *
-     * @return status - 状态,1启用0禁用
-     */
-    public Byte getStatus() {
-        return status;
-    }
-
-    /**
-     * 设置状态,1启用0禁用
-     *
-     * @param status 状态,1启用0禁用
-     */
-    public void setStatus(Byte status) {
-        this.status = status;
-    }
+  
 }

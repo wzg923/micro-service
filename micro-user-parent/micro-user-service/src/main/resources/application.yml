@@ -21,10 +21,10 @@ spring:
 
   #datasource
   datasource:
-    name: masterDataSource
+    name: userServiceDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/demo?useSSL=true
-    username: demo
+    url: jdbc:mysql://192.168.61.23:3306/riskcontrol?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: rcuser
     password: 123456
         # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
@@ -53,7 +53,7 @@ spring:
 # mybatis配置
 mybatis:
   mapper-locations: classpath*:/mapper/**/**.xml
-  type-aliases-package: com.vcg.micro.user.dao.model
+  type-aliases-package: com.guoyicap.micro.config.user.model,com.guoyicap.micro.config.user.entity
   configuration:
     mapUnderscoreToCamelCase: true
     database-id: service-user
@@ -63,10 +63,12 @@ mybatis:
     lazy-loading-enabled: true
     # 当启用时，有延迟加载属性的对象在被调用时将会完全加载任意属性。否则，每种属性将会按需要加载
     aggressive-lazy-loading: true
+
     
 #mapper  
-mapper:
-  mappers: com.vcg.micro.common.base.MyMapper
+mapper: 
+  mappers: com.guoyicap.micro.common.base.MyMapper
+  #mappers: com.vcg.micro.common.base.MyMapper
   not-empty: true
   identity: MYSQL
 
@@ -91,7 +93,7 @@ pagehelper:
 # Base packages to scan Dubbo Components (e.g @Service , @Reference)
 dubbo:
   scan:
-    basePackages: com.vcg.micro.config.user.service.impl
+    basePackages: com.guoyicap.micro.config.user.service.impl
 # Dubbo Config properties
 ## ApplicationConfig Bean
   application:

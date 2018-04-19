@@ -53,6 +53,6 @@
         id,username,password
     </sql>
     <sql id="table_name">
-        t_user
+        t_s_user
     </sql>
 </mapper>

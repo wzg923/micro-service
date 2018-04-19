@@ -1,19 +1,19 @@
 package com.guoyicap.micro.config.user.dao;
 
-import com.guoyicap.micro.config.user.model.User;
-
 import java.util.List;
+
+import com.guoyicap.micro.config.user.model.User;
 
 /**
  * Created on 2016/7/05 11:44.
  */
 public interface UserDao {
 
-    public User selectByPrimaryKey(Integer id);
-
+    public User selectByPrimaryKey(String id);
+    
     public List<User> list();
 
-    public int deleteByPrimaryKey(Integer id);
+    public int deleteByPrimaryKey(String id);
 
     public int insert(User user);
 

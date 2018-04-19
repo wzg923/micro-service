@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>   
+    <!-- 配置文件路径 -->  
+    <properties resource="generator/generatorConfig.properties"/> 
+    <!-- <classPathEntry  location="mysql-connector-java-5.1.30.jar"></classPathEntry> -->
+    <!-- <classPathEntry  location="ojdbc6-1.0.0.0.jar"></classPathEntry> -->
+    <!--数据库驱动包路径 -->  
+    <classPathEntry location="${drive.class.path}"/>  
+    <context id="MySQLTables"  targetRuntime="MyBatis3">
+		<!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+		<!-- 这里的type里写的是你的实现类的类全路径 -->
+        <commentGenerator type="org.mybatis.generator.MyCommentGenerator">
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <!-- <jdbcConnection driverClass="oracle.jdbc.driver.MysqlDriver" 
+			connectionURL="jdbc:oracle:thin:@192.168.61.16:1521:orcl" userId="dzuser" password="123456">			
+            <property name="remarksReporting" value="true"></property>
+        </jdbcConnection> -->
+        <jdbcConnection driverClass="${jdbc.driver}" 
+            connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="${model.package}" targetProject="${model.target.project}">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="${mapper.package}" targetProject="${mapper.target.project}">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${dao.package}" targetProject="${java.target.project}">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <table tableName="T_S_Role" domainObjectName="TSRole" enableCountByExample="false" enableSelectByExample="false"
+        enableDeleteByExample="false" enableDeleteByPrimaryKey="false" enableUpdateByExample="false" enableInsert="true">
+		</table>
+    </context>
+</generatorConfiguration>
