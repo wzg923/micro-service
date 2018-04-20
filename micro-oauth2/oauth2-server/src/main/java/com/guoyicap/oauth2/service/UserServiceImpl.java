@@ -72,7 +72,6 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService, Use
 		String password = passwordEncoder.encode("111111");
 
 		TSUser tsuser = userDao.getUserByUsername(username);
-		System.err.println(tsuser.getUsername());
 		Set<Role> roles = userDao.selectRoleByUserId(username);
 		Set<GrantedAuthority> userAuthotities = new HashSet<>();
 		for (Role role : roles) {

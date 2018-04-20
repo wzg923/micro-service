@@ -1,5 +1,6 @@
 package com.guoyicap.oauth2.web;
 
+import java.security.Principal;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -44,9 +45,13 @@ public class UserController {
     private AuthenticationManager authenticationManager;
     
     
-    
+    @GetMapping("/user")
+    @ResponseBody
+    public Principal user(Principal user){
+        return user;
+    }
 
-    @RequestMapping(value = "/user")
+    @RequestMapping(value = "/user2")
     @ResponseBody
     public User user(@AuthenticationPrincipal User user) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

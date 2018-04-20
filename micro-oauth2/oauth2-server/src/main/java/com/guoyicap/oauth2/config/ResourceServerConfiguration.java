@@ -16,14 +16,14 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
-        /*.authorizeRequests()
-                .antMatchers("/resource/**")
-                .hasRole("USER")
-                .and()
-                .authorizeRequests()
-                .antMatchers("/micro-user/**")
-                .hasRole("USER")
-                .and()*/
+//        		.authorizeRequests()
+//                .antMatchers("/resource/**")
+//                .hasRole("USER")
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers("/micro-user/**")
+//                .hasRole("USER")
+//                .and()
                 .csrf()
                 .disable()
                 .exceptionHandling()
