@@ -37,7 +37,7 @@ public class UISecurityConfig extends WebSecurityConfigurerAdapter {
         .csrf()
         .disable();
         //http.httpBasic();
-        
+		http.authorizeRequests().anyRequest().authenticated();
     	
     	http.csrf().disable();
     }
