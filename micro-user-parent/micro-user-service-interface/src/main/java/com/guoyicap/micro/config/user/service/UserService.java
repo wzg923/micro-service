@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.github.pagehelper.PageInfo;
 import com.guoyicap.micro.config.user.model.User;
@@ -48,7 +46,7 @@ public interface UserService {
     @ApiOperation(value = "根据主键删除对象", httpMethod = "DELETE", response = Integer.class)
     //@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
     @DeleteMapping(value="/user/{id}")
-    int deleteByPrimaryKey(@PathVariable("id") Integer id);
+    int deleteByPrimaryKey(@PathVariable("id") String id);
 
     @ApiOperation(value = "插入对象", httpMethod = "POST", response = Integer.class,consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     //@RequestMapping(value = "/user",method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)

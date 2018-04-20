@@ -16,7 +16,7 @@ import com.guoyicap.micro.common.base.BaseModel;
 public class User extends BaseModel implements Serializable {
     private static final long serialVersionUID = 6985965045661480463L;
 
-    private Integer id;
+    private String id;
 
     private String username;
 
@@ -24,31 +24,28 @@ public class User extends BaseModel implements Serializable {
     
     private Set<Role> roles;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public User setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
-		return this;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public User setUsername(String username) {
+    public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
-		return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public User setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
-		return this;
     }
 
 	public Set<Role> getRoles() {
@@ -58,4 +55,6 @@ public class User extends BaseModel implements Serializable {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+	
+	
 }
