@@ -30,64 +30,9 @@ public class TSUser extends TSBaseUser implements java.io.Serializable {
 	private java.lang.String updateBy;
 	/**修改人名称*/
 	private java.lang.String updateName;
-	/**性别*/
-	private java.lang.String sex;
-	/**MAC系统*/
-	private java.lang.Short mac;
-	/**BS系统*/
-	private java.lang.Short bs;
-	/**CS系统*/
-	private java.lang.Short cs;
-	/**打印*/
-	private java.lang.Short printdefault;
-	/***/
-	private java.lang.String mainpage;
-	/***/
-	private java.lang.String mastertype;
-	/***/
-	private java.lang.String theme;
-	/***/
-	private java.lang.String openstyle;
-	/***/
-	private java.lang.String type;
-	/***/
-	private java.lang.String servecode;
-	/***/
-	private java.lang.String station;
-	/***/
-	private java.lang.Integer serviceid;
-	/***/
-	private java.lang.String syscode;
 	
-	/**
-	* @Fields province : 省
-	*/ 
-	private java.lang.String province;
-	/**
-	* @Fields city : 市
-	*/ 
-	private java.lang.String city;
-	/**
-	* @Fields area : 区
-	*/ 
-	private java.lang.String area;
-	/**
-	* @Fields maxHuiyuan : 最大绑定会员量
-	*/ 
-	private java.lang.Integer maxHuiyuan=30;
-	/**
-	* @Fields kefuparentuserid : 客服组长专用
-	*/ 
-	private java.lang.String kefuparentuserid; 	
+	private String image;
 	
-	/**
-	* @Fields idcard : 身份证号
-	*/ 
-	private java.lang.String idcard;
-	/**
-	* @Fields bankcode : 银行编号
-	*/ 
-	private java.lang.String bankcode;
 	
 	@Column(name = "signatureFile", length = 100)
 	public String getSignatureFile() {
@@ -220,174 +165,15 @@ public class TSUser extends TSBaseUser implements java.io.Serializable {
 	public void setUpdateName(java.lang.String updateName){
 		this.updateName = updateName;
 	}
-	@Column(name ="sex",nullable=true,length=1)
-	public java.lang.String getSex() {
-		return sex;
+
+	public String getImage() {
+		return image;
 	}
 
-	public void setSex(java.lang.String sex) {
-		this.sex = sex;
+	public void setImage(String image) {
+		this.image = image;
 	}
-	@Column(name ="mac",nullable=true,length=1)
-	public java.lang.Short getMac() {
-		return mac;
-	}
-
-	public void setMac(java.lang.Short mac) {
-		this.mac = mac;
-	}
-	@Column(name ="bs",nullable=true,length=1)
-	public java.lang.Short getBs() {
-		return bs;
-	}
-
-	public void setBs(java.lang.Short bs) {
-		this.bs = bs;
-	}
-	@Column(name ="cs",nullable=true,length=1)
-	public java.lang.Short getCs() {
-		return cs;
-	}
-
-	public void setCs(java.lang.Short cs) {
-		this.cs = cs;
-	}
-	@Column(name ="printdefault",nullable=true,length=1)
-	public java.lang.Short getPrintdefault() {
-		return printdefault;
-	}
-
-	public void setPrintdefault(java.lang.Short printdefault) {
-		this.printdefault = printdefault;
-	}
-	@Column(name ="mainpage",nullable=true,length=100)
-	public java.lang.String getMainpage() {
-		return mainpage;
-	}
-
-	public void setMainpage(java.lang.String mainpage) {
-		this.mainpage = mainpage;
-	}
-	@Column(name ="mastertype",nullable=true,length=50)
-	public java.lang.String getMastertype() {
-		return mastertype;
-	}
-
-	public void setMastertype(java.lang.String mastertype) {
-		this.mastertype = mastertype;
-	}
-	@Column(name ="theme",nullable=true,length=50)
-	public java.lang.String getTheme() {
-		return theme;
-	}
-
-	public void setTheme(java.lang.String theme) {
-		this.theme = theme;
-	}
-	@Column(name ="openstyle",nullable=true,length=3)
-	public java.lang.String getOpenstyle() {
-		return openstyle;
-	}
-
-	public void setOpenstyle(java.lang.String openstyle) {
-		this.openstyle = openstyle;
-	}
-	@Column(name ="type",nullable=true,length=20)
-	public java.lang.String getType() {
-		return type;
-	}
-
-	public void setType(java.lang.String type) {
-		this.type = type;
-	}
-	@Column(name ="servecode",nullable=true,length=50)
-	public java.lang.String getServecode() {
-		return servecode;
-	}
-
-	public void setServecode(java.lang.String servecode) {
-		this.servecode = servecode;
-	}
-	@Column(name ="station",nullable=true,length=50)
-	public java.lang.String getStation() {
-		return station;
-	}
-
-	public void setStation(java.lang.String station) {
-		this.station = station;
-	}
-	@Column(name ="serviceid",nullable=true,length=10)
-	public java.lang.Integer getServiceid() {
-		return serviceid;
-	}
-
-	public void setServiceid(java.lang.Integer serviceid) {
-		this.serviceid = serviceid;
-	}
-	@Column(name ="syscode",nullable=true,length=50)
-	public java.lang.String getSyscode() {
-		return syscode;
-	}
-
-	public void setSyscode(java.lang.String syscode) {
-		this.syscode = syscode;
-	}
-	@Column(name ="PROVINCE",nullable=true,length=6)
-	public java.lang.String getProvince() {
-		return province;
-	}
-
-	public void setProvince(java.lang.String province) {
-		this.province = province;
-	}
-	@Column(name ="CITY",nullable=true,length=6)
-	public java.lang.String getCity() {
-		return city;
-	}
-
-	public void setCity(java.lang.String city) {
-		this.city = city;
-	}
-	@Column(name ="AREA",nullable=true,length=6)
-	public java.lang.String getArea() {
-		return area;
-	}
-
-	public void setArea(java.lang.String area) {
-		this.area = area;
-	}
-	@Column(name ="MAX_HUIYUAN",nullable=true,length=10)
-	public java.lang.Integer getMaxHuiyuan() {
-		return maxHuiyuan;
-	}
-
-	public void setMaxHuiyuan(java.lang.Integer maxHuiyuan) {
-		this.maxHuiyuan = maxHuiyuan;
-	}
-	@Column(name ="KEFUPARENTUSERID",nullable=true,length=50)
-	public java.lang.String getKefuparentuserid() {
-		return kefuparentuserid;
-	}
-
-	public void setKefuparentuserid(java.lang.String kefuparentuserid) {
-		this.kefuparentuserid = kefuparentuserid;
-	}
-	@Column(name ="IDCARD",nullable=true,length=50)
-	public java.lang.String getIdcard() {
-		return idcard;
-	}
-
-	public void setIdcard(java.lang.String idcard) {
-		this.idcard = idcard;
-	}
-	@Column(name ="BANKCODE",nullable=true,length=50)
-	public java.lang.String getBankcode() {
-		return bankcode;
-	}
-
-	public void setBankcode(java.lang.String bankcode) {
-		this.bankcode = bankcode;
-	}
+	
 	
 	
 }

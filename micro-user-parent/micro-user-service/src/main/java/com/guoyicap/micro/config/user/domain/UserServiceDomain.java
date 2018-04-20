@@ -10,14 +10,14 @@ import com.github.pagehelper.PageInfo;
 import com.guoyicap.micro.common.base.BaseServiceImpl2;
 import com.guoyicap.micro.config.user.dao.TSUserDao;
 import com.guoyicap.micro.config.user.dao.UserDao;
-import com.guoyicap.micro.config.user.entity.TSUser;
+import com.guoyicap.micro.config.user.entity.TSBaseUser;
 import com.guoyicap.micro.config.user.model.User;
 
 import tk.mybatis.mapper.common.Mapper;
 
 @Service
 @Transactional
-public class UserServiceDomain extends BaseServiceImpl2<TSUser> {
+public class UserServiceDomain extends BaseServiceImpl2<TSBaseUser> {
 	/*
 	 * public UserServiceDomain(Validator validator) { super(validator); }
 	 */
@@ -33,10 +33,9 @@ public class UserServiceDomain extends BaseServiceImpl2<TSUser> {
 		return tsUserDao;
 	}
 
-	public PageInfo<User> getDataList(TSUser record) {
-		PageInfo<TSUser> pageInfo = super.selectPage(record.getPage(), record.getRows(), record);
-
-		return null;
+	public PageInfo<TSBaseUser> getDataList(TSBaseUser record) {
+		PageInfo<TSBaseUser> pageInfo = super.selectPage(record.getPage(), record.getRows(), record);
+		return pageInfo;
 	}
 
 	public User selectByPrimaryKey(String id) {
@@ -47,7 +46,7 @@ public class UserServiceDomain extends BaseServiceImpl2<TSUser> {
 		return userDao.list();
 	}
 
-	public int deleteByPrimaryKey(Integer id) {
+	public int deleteByPrimaryKey(String id) {
 		return tsUserDao.deleteByPrimaryKey(id);
 	}
 

@@ -133,3 +133,12 @@ management:
         defaults: memory
 ## StatusChecker Name extras (default : empty )
         extras: load,threadpool
+
+        
+        
+security:
+  oauth2:
+    resource:
+      id: micro-user
+      user-info-uri: http://localhost:8082/oauth2/user
+      prefer-token-info: true        

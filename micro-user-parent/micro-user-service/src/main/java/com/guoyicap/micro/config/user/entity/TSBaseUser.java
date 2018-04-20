@@ -23,7 +23,7 @@ public class TSBaseUser extends IdEntity implements java.io.Serializable {
 	private String browser;// 用户使用浏览器类型
 	private String userkey;// 用户验证唯一标示
 	private String password;// 用户密码
-	private Short activitiSync;// 是否同步工作流引擎
+	private Short activitisync;// 是否同步工作流引擎
 	private Short status;// 状态1：启用,0：禁用
 	private byte[] signature;// 签名文件
 	private String deleteFlag = "0";// 删除标志 1：已删除, 0：未删除
@@ -69,13 +69,13 @@ public class TSBaseUser extends IdEntity implements java.io.Serializable {
 		this.status = status;
 	}
 
-	public Short getActivitiSync() {
-		return activitiSync;
+	public Short getActivitisync() {
+		return activitisync;
 	}
 
 	@Column(name = "activitisync")
-	public void setActivitiSync(Short activitiSync) {
-		this.activitiSync = activitiSync;
+	public void setActivitisync(Short activitisync) {
+		this.activitisync = activitisync;
 	}
 
 	@Column(name = "password", length = 100)
