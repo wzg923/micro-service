@@ -4,10 +4,11 @@ server:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8082/me
+      user-info-uri: http://localhost:8082/oauth2/user 
+      #http://localhost:8082/me
     client:
       access-token-uri: http://localhost:8082/oauth2/oauth/token
-      user-authorization-uri: http://localhost:8082/uaa/oauth/authorize
+      user-authorization-uri: http://localhost:8082/oauth2/oauth/authorize
 
       client-id: webapp
       #client-id:acme
